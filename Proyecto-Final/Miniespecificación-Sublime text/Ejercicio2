@@ -1,0 +1,98 @@
+#VERIFICAR SI SON SEMEJANTES LOS PROMEDIOS DE LA DIAGONAL DE AMBAS MATRICES
+
+Inicio
+
+	//Declaración e Inicialización de las variables
+    i, j, diagonal, suma1, suma2, i[0-n]
+    double promedio1, promedio2, d[0-n]
+    diagonalstr, x('principal')
+
+    diagonal <- 0; suma1 <- 0; suma2 <- 0; promedio1 <- 0; promedio2 <- 0;
+        
+    //Declaración e ingreso de datos en la matriz A
+	A[5][5], i[0-n]
+	<<"Ingrese los elementos de la matriz A: "
+    Para (i<-0, i<5, i++) hacer
+    	Para (j<-0, j<5, j++) hacer
+    		<<"A[", +i +,"] [", +j +,"] = "
+    		>>A[i][j]
+    	Fin_Para
+    Fin_Para
+
+    //Declaración e ingreso de datos en la matriz B
+	B[5][5], i[0-n]
+	<<"Ingrese los elementos de la matriz B: "
+    Para (i<-0, i<5, i++) hacer
+    	Para (j<-0, j<5, j++) hacer
+    		<<"B[", +i +,"] [", +j +,"] = "
+    		>>B[i][j]
+    	Fin_Para
+    Fin_Para
+
+    <<"¿Qué diagonal desea analizar?"
+    <<"1. Diagonal Principal"
+    <<"2. Diagonal Secundaria"
+    >>diagonal
+
+    Dependiendo_de (diagonal) hacer: 
+
+    	Opcion '1';
+    		Para (i<-0, i<5, i++) hacer
+		    	Para (j<-0, j<5, j++) hacer
+		    		Si (i == j) entonces
+		    			suma1 <- suma1 + A[i][j]
+                    	promedio1 <- suma1 / 5
+                    	suma2 <- suma2 + B[i][j]
+                    	promedio2 <- suma2 / 5
+                    Fin_Si
+		    	Fin_Para
+		    Fin_Para
+    	Break;
+
+    	Opcion '2';
+    		Para (i<-0, i<5, i++) hacer
+		    	Para (j<-0, j<5, j++) hacer
+		    		Si (i+j==4) entonces
+		    			suma1 <- suma1 + A[i][j]
+                    	promedio1 <- suma1 / 5
+                    	suma2 <- suma2 + B[i][j]
+                    	promedio2 <- suma2 / 5
+                    Fin_Si
+		    	Fin_Para
+		    Fin_Para
+    	Break;
+
+    	Opcion 'default';
+    		<<"Opción ingresada incorrecta"
+    	Break;
+    Fin_Dependiendo_De
+
+    //Presentar la matriz A
+    Para (i<-0, i<5, i++) hacer
+    	Para (j<-0, j<5, j++) hacer
+    		<< A[i][j], +"   "
+    	Fin_Para
+    	<<""
+    Fin_Para
+
+    //Presentar la matriz B
+    Para (i<-0, i<5, i++) hacer
+    	Para (j<-0, j<5, j++) hacer
+    		<< B[i][j], +"   "
+    	Fin_Para
+    	<<""
+    Fin_Para
+
+    Si (diagonal == 2) entonces
+    	diagonalstr <- "secundaria"
+    Fin_Si
+    <<"El promedio de la diagonal ", +diagonalstr+, " de la matriz A es: ", +promedio1"
+    <<"El promedio de la diagonal ", +diagonalstr+, " de la matriz B es: " +promedio2"
+
+    Si (promedio1 == promedio2) entonces
+    	<<"Los promedios de la diagonal ", +diagonalstr+, " de ambas matrices son iguales"
+    
+    Sino
+    	<<"Los promedios de la diagonal ", +diagonalstr+, " de ambas matrices son iguales"
+    Fin_Si
+Fin

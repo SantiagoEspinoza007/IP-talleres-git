@@ -1,0 +1,35 @@
+#Contar los números terminados en 3 de un vector
+
+Inicio //Método Principal
+
+	//Declaración e Inicialización de variables
+    i, num, i[0-n]
+    i <- 0, num <- 0
+
+	//Declaración e Ingreso de datos en el vector
+    A[10], i[0-n]
+    <<"Ingrese los elementos del vector"
+    Para (i<-0, i<10, i++) hacer
+    	<<"A[", +i +,"]= "
+    	>>A[i]
+    Fin_Para
+
+    num <- Buscar_Numeros(A) //Se llama a la función 
+
+    <<"En el vector ingresado se han encontrado ", +num +," números terminados en 3."
+
+Fin
+
+Buscar_Numeros(A)
+	//Declaración e Inicialización de variables
+	num, i, i[0-n]
+	num<-0
+
+	//Proceso para contar los números terminados en 3
+	Para (i<-0, i<10, i++) hacer
+		Si (A[i] % 10 == 3) entonces
+			num <- num + 1
+		Fin_Si
+	Fin_Para
+	Devolver num
+Fin_Buscar_Numeros(A)

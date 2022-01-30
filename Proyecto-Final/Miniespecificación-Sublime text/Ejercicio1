@@ -1,0 +1,29 @@
+#PRESENTAR LOS NUMEROS COMPRENDIDOS ENTRE 1 Y EL NÚMERO INGRESADO
+
+Inicio
+
+	//Declaración e Inicialización de las variables
+	n, i, j, i[0-n]
+    n <- 0; i <- 0; j <- 0
+
+    //Se pregunta el límite del vector
+    <<"¿Cuántos números va a ingresar?: "
+    >>n
+
+    //Declaración e Ingreso de datos en el vector
+    A[n], i[0-n]
+    <<"Ingrese los elementos del vector"
+    Para (i<-0, i<n, i++) hacer
+    	<<"A[", +i +,"]= "
+    	>>A[i]
+    Fin_Para
+
+    Para (i<-0, i<n, i++) hacer
+    	<<"Los números comprendidos entre 1 y ", +A[i] +," son: "
+    	Para (j <- 1, j<=A[i], j++) hacer
+    		<<j+ ", "
+    	Fin_Para
+    	<<" "
+    Fin_Para
+
+Fin

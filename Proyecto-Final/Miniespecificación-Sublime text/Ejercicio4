@@ -1,0 +1,62 @@
+#Intercambiar de posición 2 filas de la matriz
+
+Inicio //Método Principal
+	//Declaración e Inicialización de variables
+    i, j, m, n, f1, f2, i[0-n]
+    m <- 0, n <- 0, f1 <- 0, f2 <- 0
+
+	//Determinar el tamaño de la matriz
+	<<"¿Cuántas filas va a tener la matriz a ingresar?: "
+	>>m
+	<<"¿Cuántas columnas va a tener la matriz a ingresar?: "
+	>>n
+
+	//Declaración e ingreso de datos en la matriz
+	A[m][n], i[0-n]
+	<<"Ingrese los elementos de la matriz A: "
+    Para (i<-0, i<m, i++) hacer
+    	Para (j<-0, j<n, j++) hacer
+    		<<"A[", +i +,"] [", +j +,"] = "
+    		>>A[i][j]
+    	Fin_Para
+    Fin_Para
+
+    //Determinar las filas a intercambiar
+    <<"Ingrese el valor de la primera fila a intercambiar: "
+    >>f1
+    <<"Ingrese el valor de la segunda fila a intercambiar: "
+    >>f2
+
+    <<"La matriz Original es: "
+    Para (i<-0, i<m, i++) hacer
+    	Para (j<-0, j<n, j++) hacer
+    		<< A[i][j], +"   "
+    	Fin_Para
+    	<<""
+    Fin_Para
+    
+    A <- intercambiar(A, m, n, f1, f2) //Se llama a la función
+
+    <<"La matriz A es:"
+    Para (i<-0, i<m, i++) hacer
+    	Para (j<-0, j<n, j++) hacer
+    		<< A[i][j], +"   "
+    	Fin_Para
+    	<<""
+    Fin_Para
+Fin
+
+intercambiar(A, m, n, f1, f2)
+	//Proceso para intercambiar las filas solicitadas
+	aux, i, j, i[0-n]
+	Para (i<-0, i<m, i++) hacer
+    	Para (j<-0, j<n, j++) hacer
+			aux <- A[i][j]
+            A[i][j] <- A[f2][j]
+            A[f2][j] <- aux
+            aux <- 0
+    	Fin_Para
+    Fin_Para
+
+	Devolver A
+Fin_intercambiar(A, m, n, f1, f2)
