@@ -78,7 +78,7 @@ def switch():
         for fila in B:
             print("[", end="   ")
             for elemento in fila:
-                print("{:8f}".format(elemento), end="   ")
+                print("{}".format(elemento), end="   ")
             print("]")
         print()
 
